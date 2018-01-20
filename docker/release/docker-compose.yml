@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  microtrader-base:
+    build:
+      context: ../..
+      dockerfile: docker/release/Dockerfile
+      args:
+        app_name: ${PROJECT_NAME}
+    ports:
+      - 8080:80
+    environment:
+      SHUTDOWN_LIFETIME: "0"
